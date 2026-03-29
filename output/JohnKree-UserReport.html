@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>u/JohnKree — Shill Analysis</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root {
+    --bg: #0f1117; --surface: #1a1d27; --surface-2: #242836;
+    --border: #2e3348; --text: #e2e4ed; --text-muted: #8b8fa7;
+    --accent: #6c8aff; --accent-dim: rgba(108,138,255,0.12);
+    --radius: 10px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'IBM Plex Sans',-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem; max-width:1400px; margin:0 auto; }
+.header { border-bottom:1px solid var(--border); padding-bottom:2rem; margin-bottom:2rem; }
+.header h1 { font-size:1.75rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:0.25rem; }
+.header .subtitle { color:var(--text-muted); font-size:0.9rem; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; margin-bottom:2rem; }
+.stat-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; }
+.stat-card .label { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); margin-bottom:0.25rem; }
+.stat-card .value { font-size:1.5rem; font-weight:700; font-family:'IBM Plex Mono',monospace; }
+.verdict-box { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; margin-bottom:2rem; border-left:4px solid #ca8a04; }
+.verdict-box .verdict-label { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); margin-bottom:0.5rem; }
+.verdict-box .verdict-value { font-size:1.25rem; font-weight:700; color:#ca8a04; margin-bottom:0.5rem; }
+.verdict-box .verdict-detail { color:var(--text-muted); font-size:0.9rem; }
+.rationale-box { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:2rem; font-size:0.9rem; color:var(--text-muted); }
+section { margin-bottom:2.5rem; }
+section h2 { font-size:1.15rem; font-weight:600; margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); }
+table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+thead th { background:var(--surface-2); color:var(--text-muted); font-weight:600; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; padding:0.75rem; text-align:left; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10; }
+tbody td { padding:0.625rem 0.75rem; border-bottom:1px solid var(--border); vertical-align:top; }
+tbody tr:hover { background:var(--accent-dim); }
+.comment-text { max-width:400px; font-size:0.8rem; color:var(--text-muted); word-break:break-word; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.note { color:var(--text-muted); font-size:0.85rem; font-style:italic; margin-top:0.5rem; }
+.footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); color:var(--text-muted); font-size:0.8rem; }
+.table-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius); }
+@media (max-width:768px) { body { padding:1rem; } .stats-grid { grid-template-columns:repeat(2,1fr); } }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>u/JohnKree — Shill Analysis</h1>
+    <div class="subtitle">Last 180 days · 2025-09-30 – 2026-03-23 · Generated March 28, 2026</div>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="label">Posts Scanned</div>
+        <div class="value">258</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">Subreddits</div>
+        <div class="value">40</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">Risk Score</div>
+        <div class="value" style="color:#ca8a04;">25%</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">Top Product</div>
+        <div class="value" style="font-size:1rem;">Apple</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">Concentration</div>
+        <div class="value">5%</div>
+    </div>
+</div>
+
+<div class="verdict-box">
+    <div class="verdict-label">Verdict</div>
+    <div class="verdict-value">Inconclusive</div>
+    <div class="verdict-detail">Some promotional patterns, but not conclusive.</div>
+</div>
+
+<div class="rationale-box">
+    <strong>Signal breakdown:</strong> Burst activity detected (217 clusters); Promotes &#x27;Apple&#x27; in 4 subreddits
+</div>
+
+<section>
+    <h2>Activity by Subreddit</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Subreddit</th><th>Posts</th><th>% of Activity</th></tr></thead>
+        <tbody>
+        <tr>
+            <td><a href="https://www.reddit.com/r/macapps" target="_blank">r/macapps</a></td>
+            <td style="text-align:center;">114</td>
+            <td style="text-align:center;">44%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/ArcRaiders" target="_blank">r/ArcRaiders</a></td>
+            <td style="text-align:center;">26</td>
+            <td style="text-align:center;">10%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/mac" target="_blank">r/mac</a></td>
+            <td style="text-align:center;">18</td>
+            <td style="text-align:center;">6%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/ObsidianMD" target="_blank">r/ObsidianMD</a></td>
+            <td style="text-align:center;">12</td>
+            <td style="text-align:center;">4%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/BuyItForLife" target="_blank">r/BuyItForLife</a></td>
+            <td style="text-align:center;">7</td>
+            <td style="text-align:center;">2%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/Affinity" target="_blank">r/Affinity</a></td>
+            <td style="text-align:center;">6</td>
+            <td style="text-align:center;">2%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/Opinel" target="_blank">r/Opinel</a></td>
+            <td style="text-align:center;">6</td>
+            <td style="text-align:center;">2%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/IndianCountry" target="_blank">r/IndianCountry</a></td>
+            <td style="text-align:center;">5</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/PublicFreakout" target="_blank">r/PublicFreakout</a></td>
+            <td style="text-align:center;">5</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/LeverGuns" target="_blank">r/LeverGuns</a></td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/AppleMusic" target="_blank">r/AppleMusic</a></td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/CowboyHats" target="_blank">r/CowboyHats</a></td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/ClaudeAI" target="_blank">r/ClaudeAI</a></td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/learntodraw" target="_blank">r/learntodraw</a></td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/pcgaming" target="_blank">r/pcgaming</a></td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/PKMS" target="_blank">r/PKMS</a></td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/MacOS" target="_blank">r/MacOS</a></td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/fountainpens" target="_blank">r/fountainpens</a></td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/whatcarshouldIbuy" target="_blank">r/whatcarshouldIbuy</a></td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">1%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/BuyFromEU" target="_blank">r/BuyFromEU</a></td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/casio" target="_blank">r/casio</a></td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/degoogle" target="_blank">r/degoogle</a></td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/politics" target="_blank">r/politics</a></td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/digg" target="_blank">r/digg</a></td>
+            <td style="text-align:center;">2</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/TheDarkTower" target="_blank">r/TheDarkTower</a></td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/worldnews" target="_blank">r/worldnews</a></td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/procreatebrushes" target="_blank">r/procreatebrushes</a></td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/apple" target="_blank">r/apple</a></td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/macbookair" target="_blank">r/macbookair</a></td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">0%</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.reddit.com/r/RangerNext" target="_blank">r/RangerNext</a></td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">0%</td>
+        </tr></tbody>
+    </table>
+    </div>
+</section>
+
+<section>
+    <h2>Activity Log</h2>
+    <p class="note">Showing 200 of 258 posts. Full data in CSV.</p>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Subreddit</th><th>Date</th><th>Type</th><th>Text</th><th>URL</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-03-23</td>
+            <td>comment</td>
+            <td class="comment-text">I want to respond to this from my personal perspective as a moderator, because I think there’s a fundamental disconnect in how we see our role versus how you&#x27;re describing it.
+
+From where I sit we are in a constant battle against users that intentionally or unintentionally are working at destroying </td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1s021oe/feedback_the_lifetime_license_audit_thread/oc10rgk/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-03-22</td>
+            <td>comment</td>
+            <td class="comment-text">Stepping in here as an objective member of the mod team since u/Mstormer has recused themselves. 
+
+To be perfectly clear: **We are not banning you**. We can see you are intentionally baiting a ban to validate your claims of a powertrip, but we prefer to let your own words stand as a testament to you</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1s021oe/feedback_the_lifetime_license_audit_thread/obv3xci/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-03-22</td>
+            <td>comment</td>
+            <td class="comment-text">I appreciate you sharing this perspective and I want to respond from my personal point of view as a moderator here.
+
+First, it’s important to remember that we manage this community entirely in our spare time, for free. This subreddit is constantly flooded by vibe coded apps with vibe coded posts wit</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1s021oe/feedback_the_lifetime_license_audit_thread/oburr7r/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/TheDarkTower</td>
+            <td>2026-03-20</td>
+            <td>comment</td>
+            <td class="comment-text">There is a graphic novel?</td>
+            <td><a href="https://www.reddit.com/r/TheDarkTower/comments/1rz16qh/continuing_the_journey_of_roland_and_the_first/obj2c15/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-03-20</td>
+            <td>comment</td>
+            <td class="comment-text">There is currently no definitive way to prove how much of an app was built using AI. 
+
+During our trial period we found that almost everyone just started labeling their posts with &quot;Code Completion.&quot; It became just meaningless.  
+We simply can’t moderate what we can’t prove.   
+The same goes for the </td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1ryaeex/rmacapps_mods_went_too_far_whats_changing_phase_3/obg10c3/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-03-20</td>
+            <td>comment</td>
+            <td class="comment-text">There is currently no definitive way to prove how much of an app was built using AI. Whether a dev used it for a single function, as a glorified spell checker (Copilot) or to generate the entire codebase, it all looks the same from the outside.
+
+During our trial period we found that almost everyone </td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1ryaeex/rmacapps_mods_went_too_far_whats_changing_phase_3/obg010r/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ClaudeAI</td>
+            <td>2026-03-12</td>
+            <td>comment</td>
+            <td class="comment-text">Remindme! 2 days</td>
+            <td><a href="https://www.reddit.com/r/ClaudeAI/comments/1rrsrjx/what_are_the_best_claude_skills_to_download_for/oa24huq/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ClaudeAI</td>
+            <td>2026-03-07</td>
+            <td>comment</td>
+            <td class="comment-text">Yes, that&#x27;s it. Thank you for pointing it out. :)</td>
+            <td><a href="https://www.reddit.com/r/ClaudeAI/comments/1rlno9u/skill_and_plugin_folders/o93z79u/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ClaudeAI</td>
+            <td>2026-03-05</td>
+            <td>post</td>
+            <td class="comment-text">Hello. I’m fairly new to Claude and  wanted to try Cowork. It created a skill for me that works great. The thing is: every time I want to update the skill with new information I have to give it access to the skill directory which is buried in 10 subfolders in the Mac Application support. 
+
+I have se</td>
+            <td><a href="https://www.reddit.com/r/ClaudeAI/comments/1rlno9u/skill_and_plugin_folders/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-03-03</td>
+            <td>comment</td>
+            <td class="comment-text">We had flairs for AI and discarded it for a detailed disclaimer in the post. It is working but as long as it isn&#x27;t open source AND you know where to look you just can&#x27;t prove if an app is vibe coded or not. And where do you draw the line between vibe coded and AI assist? Just because a post makes an</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1rj9mfo/this_sub_is_slowly_becoming_a_dumping_ground_for/o8fcev5/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/LeverGuns</td>
+            <td>2026-02-27</td>
+            <td>comment</td>
+            <td class="comment-text">Yes... I have a Miroku in 44 Mag. It is so awesome.</td>
+            <td><a href="https://www.reddit.com/r/LeverGuns/comments/1rgb7py/winchester_1892_porn/o7q8kjd/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/worldnews</td>
+            <td>2026-02-27</td>
+            <td>comment</td>
+            <td class="comment-text">As a southern Austrian I have to say Hvala.</td>
+            <td><a href="https://www.reddit.com/r/worldnews/comments/1rfhgwt/croatia_refuses_to_transport_russian_oil_to/o7owlop/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/AppleMusic</td>
+            <td>2026-02-26</td>
+            <td>comment</td>
+            <td class="comment-text">Not at the moment to be honest... And if iTunes was cheaper then the Quobuz version I wouldn&#x27;t give it a thought but it is the same price. So I thought why should I buy something &quot;lesser&quot; for the same money. Even when it&#x27;s not noticable... Maybe for convenience...</td>
+            <td><a href="https://www.reddit.com/r/AppleMusic/comments/1rereyh/is_itunes_quality_less_than_apple_musics/o7gmkbn/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/AppleMusic</td>
+            <td>2026-02-26</td>
+            <td>comment</td>
+            <td class="comment-text">Yes exactly, that is my thought. I&#x27;m over 40 now and I realized that most of the time I listen to &quot;old&quot; music. Financially it almost makes no sense to pay for a streamer, I could use the money and buy the stuff but then I own it. And Apple offers 1 month of Apple music for free every now and then or</td>
+            <td><a href="https://www.reddit.com/r/AppleMusic/comments/1rereyh/is_itunes_quality_less_than_apple_musics/o7gm4oz/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/AppleMusic</td>
+            <td>2026-02-26</td>
+            <td>comment</td>
+            <td class="comment-text">I would... The thing is a ton of stuff isn&#x27;t available here in Europe. I&#x27;m living on the countryside what makes it even more difficult.</td>
+            <td><a href="https://www.reddit.com/r/AppleMusic/comments/1rereyh/is_itunes_quality_less_than_apple_musics/o7glubf/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/AppleMusic</td>
+            <td>2026-02-25</td>
+            <td>post</td>
+            <td class="comment-text">I canceled Spotify some months ago because it was sneaking a ton of AI generated music into my feed. 
+
+I tried Deezer and Tidal but at the end I don’t enjoy the streaming experience anymore. 
+
+I’ve decided to just use Apple Music on and off and use the money for buying music again. 
+
+I wanted to buy</td>
+            <td><a href="https://www.reddit.com/r/AppleMusic/comments/1rereyh/is_itunes_quality_less_than_apple_musics/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-24</td>
+            <td>comment</td>
+            <td class="comment-text">Would you rather use Rectangle instead of Raycast? Do you think buying Rectangle Pro makes sense when you are using Raycast already?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1rdcoo2/raycast_the_good_the_bad_and_the_best/o74cf3e/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-24</td>
+            <td>comment</td>
+            <td class="comment-text">You don’t have to. Just use Fish and Starship in your command line. It has auto-completion. You type fd and can scroll through your commands with the arrow keys.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1rcuwkp/apps_that_search_which_are_your_favorite/o7304i1/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/learntodraw</td>
+            <td>2026-02-23</td>
+            <td>comment</td>
+            <td class="comment-text">https://preview.redd.it/390bletdk9lg1.png?width=2048&amp;amp;format=png&amp;amp;auto=webp&amp;amp;s=d4ef92ecfb73791e4cced72e3310d17059ad96e2
+
+Yes I&#x27;d like to draw Comic style or Manga style. It doesn&#x27;t need to be perfect.   
+RIght now this is where I am. :D</td>
+            <td><a href="https://www.reddit.com/r/learntodraw/comments/1rax5rg/good_paid_online_courses/o6ysuui/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Affinity</td>
+            <td>2026-02-23</td>
+            <td>comment</td>
+            <td class="comment-text">I&#x27;m speechless every time when I encounter bugs that have been in Publisher since the beginning and they are still there in Affinity. Like the printing bug when I want to print two pages and just the first one is selected (although I&#x27;m almost always printing 2 worksheets) and I cannot scroll down or</td>
+            <td><a href="https://www.reddit.com/r/Affinity/comments/1op4sne/software_support_issues/o6yjjtd/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/learntodraw</td>
+            <td>2026-02-21</td>
+            <td>comment</td>
+            <td class="comment-text">Thank you for your reply. I want to draw more realistical, maybe characters instead of stick figures... the wildest dream would be a childrens book ilustration with water colors. Nothing too detailed... I tried Youtube but it is so full of &quot;do this do that, you dont need fundamentals, if I knew this</td>
+            <td><a href="https://www.reddit.com/r/learntodraw/comments/1rax5rg/good_paid_online_courses/o6nk3ab/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-21</td>
+            <td>comment</td>
+            <td class="comment-text">We’re aware that stricter rules can temporarily reduce the number of posts, but the goal is to improve overall quality and reduce low effort or spammy submissions.
+
+In the long run, we believe this helps both users and developers, because good posts get more visibility and better discussions. We’ll </td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1r6d06r/new_post_requirements_to_combat_low_quality/o6mqczp/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/learntodraw</td>
+            <td>2026-02-21</td>
+            <td>post</td>
+            <td class="comment-text">Hello...  
+I decided to start my journey and learn drawing. I&#x27;m a language teacher and because there are almost no good books in my subject I started doodling and sketching 3 years ago. I do simple doodles on the blackboard and for my worksheets but I want to up the game and become better since it f</td>
+            <td><a href="https://www.reddit.com/r/learntodraw/comments/1rax5rg/good_paid_online_courses/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-15</td>
+            <td>comment</td>
+            <td class="comment-text">I have a Macbook Air 13&quot;. The fact that I have to scroll down to see a contact&#x27;s info because of this giant bubble is so strange...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1r4w4zf/apple_has_destroyed_the_contacts_app_we_need/o5ikbnq/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-15</td>
+            <td>comment</td>
+            <td class="comment-text">I have changed the flair to Vibe Coded.
+
+Please check the updated posting guidelines before submitting future posts:  
+[https://www.reddit.com/r/macapps/comments/1qghsc5/new\_post\_guidelines\_and\_updates\_on\_rmacapps/](https://www.reddit.com/r/macapps/comments/1qghsc5/new_post_guidelines_and_upda</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1r58zgt/os_magnetism_opensource_magnet_alternative/o5iib2e/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-13</td>
+            <td>comment</td>
+            <td class="comment-text">What browser are you using Popclip with? I&#x27;m a Firefox user but I saw that some functions are limited to Safari and Chrome...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1r2z3nk/mac_apps_that_feel_like_apple_should_have_made/o56hiwk/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-12</td>
+            <td>comment</td>
+            <td class="comment-text">I have just recently found out how easy it is to make your own extensions with snippets… it’s so complex under the hood.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1r2z3nk/mac_apps_that_feel_like_apple_should_have_made/o5297rg/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-10</td>
+            <td>comment</td>
+            <td class="comment-text">Hey. I&#x27;ve used a ton of notetaking apps, also Craft, for a very long time as a teacher but it never clicked for me.   
+I made the switch to Obsidian some weeks ago and it feels so much better. The trick is to let it grow naturally instead of trying to optimize everything at the beginning. Craft is g</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1r0pz92/what_are_some_underappreciated_and_underdiscussed/o4l0wu5/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-02-08</td>
+            <td>comment</td>
+            <td class="comment-text">Since this seems to be a specific issue with that app rather than a broader Mac apps discussion, it’s probably best handled through the app’s official support or developer channels.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1qz88ek/clop_recent_troubles/o4bws08/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/procreatebrushes</td>
+            <td>2026-01-30</td>
+            <td>comment</td>
+            <td class="comment-text">Which one did you buy?</td>
+            <td><a href="https://www.reddit.com/r/procreatebrushes/comments/1pf9kwq/best_brushes_for_doodling/o2oq85w/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/pcgaming</td>
+            <td>2026-01-29</td>
+            <td>comment</td>
+            <td class="comment-text">I don’t buy Paradox games anymore. They are finished when the new version is released. It is an endless stream of DLCs…</td>
+            <td><a href="https://www.reddit.com/r/pcgaming/comments/1qqd1oh/paradox_operating_profit_dropped_162_yearonyear/o2gb904/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/LeverGuns</td>
+            <td>2026-01-28</td>
+            <td>comment</td>
+            <td class="comment-text">But isn’t a lever gun something people tend to gladly pay more to get good quality? I mean it’s not just a gun. It looks great, it’s great for collecting, it shoots nice… cost cutting makes no sense. Look at the demand for pre 64 winchesters…</td>
+            <td><a href="https://www.reddit.com/r/LeverGuns/comments/1qpfukt/dont_buy_a_henry_rifle/o2abdji/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/LeverGuns</td>
+            <td>2026-01-28</td>
+            <td>comment</td>
+            <td class="comment-text">I bought a Miroku Winchester 1892 in 44 mag and it is so awesome… it deserves all the praise it gets…</td>
+            <td><a href="https://www.reddit.com/r/LeverGuns/comments/1qpfukt/dont_buy_a_henry_rifle/o2aakr1/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2026-01-18</td>
+            <td>comment</td>
+            <td class="comment-text">This. It’s unbearable. It’s the first OS since Vista that makes me want to go back to MS DOS…</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1qg9zei/switch_to_tahoe_262/o0d036h/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/BuyFromEU</td>
+            <td>2026-01-18</td>
+            <td>comment</td>
+            <td class="comment-text">Have a look at Denmark then. But in general, such changes are slow but they stay...</td>
+            <td><a href="https://www.reddit.com/r/BuyFromEU/comments/1qg9s10/digital_sovereignty_a_trend_in_europe_sparked_by/o0bmhtn/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Opinel</td>
+            <td>2026-01-17</td>
+            <td>comment</td>
+            <td class="comment-text">My favorite knife is my Buck 110 followed by the Peltonen M07 BUT Opinels are by far the most used knives in my household. We have them in every size, even the kitchen knives are great. My 5 year old is cutting vegetables with this kid cooking knife.</td>
+            <td><a href="https://www.reddit.com/r/Opinel/comments/1qez0l7/cheap_french_knives_are_the_best_knives/o029mnw/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-17</td>
+            <td>comment</td>
+            <td class="comment-text">Glad to see others using Obsidian in a similar way... :)</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/o028wbh/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/BuyFromEU</td>
+            <td>2026-01-17</td>
+            <td>post</td>
+            <td class="comment-text">I’m looking for winter boots for everyday usage from walking in mud and snow to groceries shopping and hiking in the woods. I have damaged toe joints so I prefer shoes to be stiff. Normally I use my Redwing Iron Rangers but they aren’t made for winter. I prefer Goodyear welted and leather because th</td>
+            <td><a href="https://www.reddit.com/r/BuyFromEU/comments/1qfhds5/bifl_all_purpose_winter_boots/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-15</td>
+            <td>comment</td>
+            <td class="comment-text">That’s exactly why MOCs ended up working better for me than folders. I don’t use them as something I maintain regularly or keep perfectly organized. I treat them more like stable entry points.
+
+The important part is that I never decide on an MOC when I’m capturing something. When I clip an article, </td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzrapu8/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-15</td>
+            <td>comment</td>
+            <td class="comment-text">That was exactly the hardest part for me too. Letting go of folders was emotional, not technical. I was used to folders being what made my notes feel safe and legitimate, so seeing a flat list of notes in the file browser first felt kinda strange?
+But I realized that I don’t actually need to use the</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzqc4wn/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">It’s the official obsidian web clipper. It’s available for iOS, Mac, Windows… you can make templates with properties that are automatically filled when a site is clipped. You also can make it that it puts selected text of the website or Reddit post into the note.</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzmjitq/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">I don’t know… but thank you. I’ve tried a lot of bookmark managers and read it later apps. But I didn’t like them. Either they were clunky or complicated or too basic. 
+The obsidian web clipper is really nice and has no friction. I have 3 templates, one for web, one for Reddit and one for YouTube. 2</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzmhvbw/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">Great. I’m happy for you. I started about one year ago by watching YouTube gurus which lead to Zettelkasten. Which may be a great system but it definitively wasn’t for me.</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzlyanx/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">I had the same problem. But organizing everything at once is overwhelming and lead to procrastination. At the end I gave up. It is so much better now letting it just grow organically. 
+If I have a new note I do it properly right away and if I start an old topic I add the stuff I use at the moment. T</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzlxta3/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">I Don’t know who is downvoting honest experiences like your post. I’m glad I could give you an idea to order more.
+For me I decided that if I have to think in what folder I should put something it is already one step too much, one step too far. It’s too much friction that would lead to an optimizati</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzlx0nb/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">Inbox/
+
+Notes/
+
+Daily/
+
+Protocols/
+
+      Incidents/
+
+      Meetings/
+
+Learning Records/
+
+Templates/
+
+Bases/   (optional)
+
+Protocols and learning Records are specific teaching folders that I realized I needed because those aren’t connected to anything else. 
+Most of my notes live directly in Notes. </td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/nzkl5a5/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/PKMS</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">Is Claude so much different to ChatGPT?</td>
+            <td><a href="https://www.reddit.com/r/PKMS/comments/1qbxxcn/2025_tools_i_actually_loved_using/nzie62t/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/apple</td>
+            <td>2026-01-14</td>
+            <td>comment</td>
+            <td class="comment-text">Fits perfectly with liquid ass. Make everything ugly as hell so it gets recognized from afar.</td>
+            <td><a href="https://www.reddit.com/r/apple/comments/1qcctqo/apple_creator_studio_is_here_a_new_creative_suite/nzi66i6/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/PKMS</td>
+            <td>2026-01-14</td>
+            <td>post</td>
+            <td class="comment-text">What finally made it click for me</td>
+            <td><a href="https://www.reddit.com/r/PKMS/comments/1qcrxzz/what_finally_made_it_click_for_me/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-14</td>
+            <td>post</td>
+            <td class="comment-text">I’ve been trying to get organized for years. Notes apps, bookmark managers, Notion, folders, tags, systems on top of systems. I’m a teacher, I have ADHD, and I always ended up in the same place: either my notes were too chaotic to be useful, or so structured that I stopped using them.
+
+First I tried</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1qcrxkt/what_finally_made_it_click_for_me/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/PKMS</td>
+            <td>2026-01-12</td>
+            <td>comment</td>
+            <td class="comment-text">I know what you mean but besides all the privacy you give up with this… Google is well known for dropping a lot of very good tools and apps in the past. What if you have hundreds of notes locked in a tool that is gone in a month… 
+
+I also use LLMs for some stuff but with notes I just think… what’s m</td>
+            <td><a href="https://www.reddit.com/r/PKMS/comments/1qb7dyo/any_notebooklm_users_in_here/nz8geoe/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-12</td>
+            <td>comment</td>
+            <td class="comment-text">Maps of Content. MOC (Map of Content) is an overview note that links to other notes on a topic.
+It acts like a hub or table of contents, helping you navigate and structure related ideas without relying on folders.
+One note can appear in multiple MOCs, which keeps your knowledge flexible and intercon</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1q7tf0y/im_tired_of_notetaking_gurus_how_do_i_actually/nz6nafu/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Opinel</td>
+            <td>2026-01-10</td>
+            <td>comment</td>
+            <td class="comment-text">Yes it is strange... I mean this argument doesn&#x27;t stand when in China everything can be made for a fraction of the cost. And it is so easy to copy. When they have production costs that are up to 50% less than in Europe, sell it for 8 times of their costs... Your example with Casios was perfect.</td>
+            <td><a href="https://www.reddit.com/r/Opinel/comments/1q8hnyj/is_my_opinel_fake/nyrx5df/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ObsidianMD</td>
+            <td>2026-01-10</td>
+            <td>comment</td>
+            <td class="comment-text">Hey. I had a similar problem. I started Obsidian a year ago and wanted to use it with Zettelkasten. What a mess.
+Now I started a new vault and with the help of Kepanos Blog and Vault and ChatGPT I figured out a system for me. 
+I have two folders: Inbox and Notes. That&#x27;s it. Everything that interests</td>
+            <td><a href="https://www.reddit.com/r/ObsidianMD/comments/1q7tf0y/im_tired_of_notetaking_gurus_how_do_i_actually/nyrm7g2/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Opinel</td>
+            <td>2026-01-09</td>
+            <td>comment</td>
+            <td class="comment-text">This. There are tons of fake Opinel from China. And Opinel had to sue producers in Spain and Italy for copying their design.</td>
+            <td><a href="https://www.reddit.com/r/Opinel/comments/1q8hnyj/is_my_opinel_fake/nyo138h/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">I see. I have to try it. The more I think about it the more it sounds great. thank you for your view. I dunno why you get downvoted. I asked for opinions and you gave yours...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/ny2tsxu/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">ok. Let&#x27;s say you just have bought a new Subaru car and because of watching some reviews on it Youtube will feed you a ton of suggestions to Subarus, some with really good information. Like preserving the car against rust. But you will need the information ins 3 months. It is harder and harder to ac</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/ny2niem/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">Linkwardens functionality is great but I really don&#x27;t like the look. Everything is so big.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/ny1ou8x/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">Thank you I will try your app!</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q4mhtj/building_a_lightweight_mac_image_viewer_what/nxzrvac/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">I once tried Notion as a notes app and it didn&#x27;t work for me but maybe it will as a bookmark manager / knowledge database.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzqe52/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">Thank you for pointing out your workflow. Never thought about splitting everything up in tasks and info into a notes app. Maybe I should try it. It sounds logical and easy to find later.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzpz9p/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">Thank your for the idea. Sounds complicated but maybe I can find an easy workflow...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzpnwk/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">Thank you for your reply, I really appreciate it. Someone is wildly downvoting stuff... Reddit...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzpkka/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">But do you use the app on Mac? Or just the browser site?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzfwfw/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">I cannot self host because I have no additional device that would fit the need. I plan to buy a new Macbook pro this spring / summer / fall and use my old Macbook Air M1 as a server but till then I have to use something else. And Karakeep didn&#x27;t click somehow. It was so... slow. But I tried the clou</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzfv4h/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">So you would suggest using a notes app?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzfm09/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">better organisation of stuff. Tags. I add the tag Arc Raiders to a Youtube video and when I click on the tag I have all stuff. This could be done with browser bookmark folders but what if you look for stuff that fits in two categories... #youtube #arcraiders; it is soooo much easier to find. And mos</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzfg18/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>comment</td>
+            <td class="comment-text">But do you use the app? Or just the website and browser extension?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/nxzf4uv/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-06</td>
+            <td>post</td>
+            <td class="comment-text">Some time ago I realized that I don&#x27;t use my browser bookmarks. I bookmarked stuff and then used to forget it creating a giant bookmark dump. If I needed to find something I just googled for it instead of searching my bookmarks. 
+
+So I started to look into bookmark manager. Oh boy. I tried a ton of </td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q5e1dr/bookmark_managers_i_guess_im_giving_up_on_them/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-05</td>
+            <td>comment</td>
+            <td class="comment-text">I’m a teacher. I often download pictures to a certain topic to show the kids. My problem is that you can’t get images in a specific size. They are all different and some are too small. I need to maximize every single pic to fit to the screen. 
+My second problem is that I want to show kids those pict</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q4mhtj/building_a_lightweight_mac_image_viewer_what/nxu6z4n/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-03</td>
+            <td>comment</td>
+            <td class="comment-text">What annoys me the most with preview… if I want to show my students downloaded pictures for a topic in a specific order preview scrambles everything around no matter the file names or the order I give it in preview. And smaller pictures aren’t adjusted to the screen size and there is no option to ma</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q2uqbn/a_mostly_free_and_open_source_app_collection_for/nxfzie6/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-02</td>
+            <td>comment</td>
+            <td class="comment-text">A Bookmark manager complex as Raindrop and the look of Linkding.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q1z5m4/its_2026_what_would_your_dream_app_be_to_have_a/nx99hwg/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macbookair</td>
+            <td>2026-01-02</td>
+            <td>comment</td>
+            <td class="comment-text">I&#x27;m glad I could help and thank you for your reply. Always happy to see old comments of mine being helpful. This problem was way bigger with 2011 Macbooks, my 2011 Macbook Pro was so wobbly when it got cold outside. My M1 is still wobbly when temperature changes but not as it was with the old one. 
+</td>
+            <td><a href="https://www.reddit.com/r/macbookair/comments/lo6tcf/wobbly_macbook_bottom/nx7owuw/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/IndianCountry</td>
+            <td>2026-01-02</td>
+            <td>comment</td>
+            <td class="comment-text">They used to air those movies a lot on Austrian and German TV when I was a kid, but over time they largely disappeared because people became more aware of how inaccurate and problematic those portrayals are.</td>
+            <td><a href="https://www.reddit.com/r/IndianCountry/comments/1q1hgpz/has_anyone_here_seen_the_film_manitous_shoe/nx7odp7/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/IndianCountry</td>
+            <td>2026-01-02</td>
+            <td>comment</td>
+            <td class="comment-text">I actually haven&#x27;t read her work. From what I know, she’s often mentioned in German contexts as a deliberate counter to Karl May. It’s a shame her books never really got proper English translations.</td>
+            <td><a href="https://www.reddit.com/r/IndianCountry/comments/1q1hgpz/has_anyone_here_seen_the_film_manitous_shoe/nx7o0th/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/IndianCountry</td>
+            <td>2026-01-02</td>
+            <td>comment</td>
+            <td class="comment-text">Yes that’s a pretty good comparison!
+Blazing Saddles satirizes classic Hollywood westerns and white American racism. Der Schuh des Manitu does something similar, but with German Karl-May westerns and the European fantasy version of the Wild West.</td>
+            <td><a href="https://www.reddit.com/r/IndianCountry/comments/1q1hgpz/has_anyone_here_seen_the_film_manitous_shoe/nx7n20t/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/IndianCountry</td>
+            <td>2026-01-01</td>
+            <td>comment</td>
+            <td class="comment-text">I’m Austrian, not Native American, but some context may help here.
+Der Schuh des Manitu is not meant to mock Native Americans. It’s a parody of the German Western tradition based on the books of Karl May.
+Karl May shaped a very romanticized and inaccurate image of American Natives in German-speaking</td>
+            <td><a href="https://www.reddit.com/r/IndianCountry/comments/1q1hgpz/has_anyone_here_seen_the_film_manitous_shoe/nx5ulgr/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/pcgaming</td>
+            <td>2026-01-01</td>
+            <td>comment</td>
+            <td class="comment-text">The best game since… I don’t know… a very long time ago</td>
+            <td><a href="https://www.reddit.com/r/pcgaming/comments/1q1art9/what_was_your_game_of_the_year_for_2025/nx4y2nj/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2026-01-01</td>
+            <td>comment</td>
+            <td class="comment-text">The Popclip dev is very nice and the app is so cheap for what it does. I love it.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1q17yct/popclip_is_seriously_next_level/nx3lnjt/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-28</td>
+            <td>comment</td>
+            <td class="comment-text">What is worse in your opinion?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1px9spc/bought_anybox_and_am_pretty_disappointed_to_say/nwdf3ri/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/RangerNext</td>
+            <td>2025-12-28</td>
+            <td>comment</td>
+            <td class="comment-text">Spacers destroy your bearings over time. Wouldn’t do it.</td>
+            <td><a href="https://www.reddit.com/r/RangerNext/comments/1px8a5t/wheel_spacer_advice/nwcchom/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-28</td>
+            <td>comment</td>
+            <td class="comment-text">I love Wipr 2. awesome dev, super responsive.</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1pxjox5/safest_adblocker_for_safari/nwcbt76/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-28</td>
+            <td>comment</td>
+            <td class="comment-text">You should try YABA.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1px9spc/bought_anybox_and_am_pretty_disappointed_to_say/nwbze0m/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/MacOS</td>
+            <td>2025-12-26</td>
+            <td>comment</td>
+            <td class="comment-text">It is ugly as hell. There are bugs and misaligned icons everywhere. 
+Battery life is shorter. 
+I don’t care about stuff being round but the corners are way too round. It’s looks comically on a flat square screen. 
+Open the contacts app. Its only purpose is to show contact information. I have to scro</td>
+            <td><a href="https://www.reddit.com/r/MacOS/comments/1pvw69g/thoughts_on_the_visual_design_of_macos_tahoe/nvzjw7o/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/dwarffortress</td>
+            <td>2025-12-25</td>
+            <td>comment</td>
+            <td class="comment-text">Can you also redo the unicorn please ?</td>
+            <td><a href="https://www.reddit.com/r/dwarffortress/comments/1pv688k/i_tried_redoing_the_horse_portrait/nvuij51/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Opinel</td>
+            <td>2025-12-22</td>
+            <td>comment</td>
+            <td class="comment-text">https://seidoknives.com/blogs/news/knives-as-gifts-bad-luck-or-superstition
+
+I’m from Europe. In my country it is considered bad luck to gift knives. But because knives are such a nice gift it is countered by letting the person who gets it pay a small symbolical amount for it.</td>
+            <td><a href="https://www.reddit.com/r/Opinel/comments/1psj4jk/xmas_present_for_my_son/nvec6op/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-22</td>
+            <td>comment</td>
+            <td class="comment-text">Just bought it. Awesome, keep up the good work!</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1psejyj/antinote_listed_in_the_verges_top_10_of_2025_and/nvdr041/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-22</td>
+            <td>comment</td>
+            <td class="comment-text">Bloom</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pszln4/its_that_time_again_what_is_your_absolute_god/nvdpe5y/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-22</td>
+            <td>comment</td>
+            <td class="comment-text">Dare you for having a good time. This sub is just for the complainers. Everything is wrong with this game. Embark, do better or we will keep complaining. /S</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1psv5tv/embark_can_people_that_willingly_reset_hundred_of/nvdk13w/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Opinel</td>
+            <td>2025-12-22</td>
+            <td>comment</td>
+            <td class="comment-text">Give a coin with it. The coin has to be given to the one who gives the gift in a symbolic gesture. 
+Gifting knives is bad luck.</td>
+            <td><a href="https://www.reddit.com/r/Opinel/comments/1psj4jk/xmas_present_for_my_son/nvdiq89/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/pcgaming</td>
+            <td>2025-12-21</td>
+            <td>comment</td>
+            <td class="comment-text">Arc Raiders. 
+Thank you for the chance!</td>
+            <td><a href="https://www.reddit.com/r/pcgaming/comments/1psch21/god_of_war_ragnarök_giveaway/nv8n9n3/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-21</td>
+            <td>comment</td>
+            <td class="comment-text">Wezterm. It’s funny that not more people mention it. It’s reliable and highly configurable. The dev is ultra nice. And everything works great. 
+I’m also using Fish.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pr84uf/best_terminal_emulator/nv6xa5v/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-21</td>
+            <td>comment</td>
+            <td class="comment-text">Fish is so much better…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pr84uf/best_terminal_emulator/nv6wyu0/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-21</td>
+            <td>comment</td>
+            <td class="comment-text">Yoink
+
+Bloom
+
+Popclip</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1prfqov/what_are_the_top_3_mac_apps_you_discovered_in_2025/nv69gs1/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-20</td>
+            <td>comment</td>
+            <td class="comment-text">Can you name the best?</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1prdg4w/removing_launchpad_was_a_mistake_and_i_miss/nv1a98h/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-19</td>
+            <td>comment</td>
+            <td class="comment-text">I will test it and give you feedback. I tried a ton of duplicate finders but never really was satisfied. Most of them are a clunky mess that can’t find sh1t.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pqn5jr/i_got_tired_of_slow_duplicate_finders_on_macos_so/nuw9ww5/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/PublicFreakout</td>
+            <td>2025-12-19</td>
+            <td>comment</td>
+            <td class="comment-text">Nope</td>
+            <td><a href="https://www.reddit.com/r/PublicFreakout/comments/1pqehn0/she_sounds_like_veronica_crabtree_from_south_park/nuv3wln/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">Ah yes… “I paid 40 bucks now I want everything for free forever”</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1ppb036/well_thats_a_nice_surprise/nur0ep9/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/firefox</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">What? I guess you made a typo and try to switch to Firefox. Firefox runs fine on my M1. It’s not that fast as chrome but then it doesn’t use half of chromes resources. Chrome is a resource hog and will eat your battery away.</td>
+            <td><a href="https://www.reddit.com/r/firefox/comments/1pptqj9/is_firefox_not_compatible_with_macbook/nup7vxs/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">Newer hardware handles stuff better / more efficient. It’s nothing Apple is doing on purpose. But Tahoe is more hardware demanding because of all the visual stuff going on.</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1ppoao8/sequoia_vs_tahoe_battery_and_ram/nuouh2i/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">Look at some blogs and reviews. All say Tahoe needs more battery. And it’s just logical. But hey the fanbois gonna downvote because they love their bubbly fruit ninja is so much.</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1ppoao8/sequoia_vs_tahoe_battery_and_ram/nuoty8d/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">What proof do you need this is pure logic or can you create stuff out of thin air? More animation leads to more cpu power. Everything else would be magic?</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1ppoao8/sequoia_vs_tahoe_battery_and_ram/nuoepow/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">I will do it during holidays. Tahoe is so bad, it’s ridiculous.</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1ppoao8/sequoia_vs_tahoe_battery_and_ram/nuoaj90/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">Can’t be. Animations and liquid ass need more battery. It can’t be the same.</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1ppoao8/sequoia_vs_tahoe_battery_and_ram/nuoafhi/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">Sequoia</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1ppoao8/sequoia_vs_tahoe_battery_and_ram/nuoabzb/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">How whiney can a community be? Ah yes…</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1ppb036/well_thats_a_nice_surprise/nunxlke/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">Embark gives us at least 2 free skins. Reddit user: I want more it’s not enough… 
+This community has some very strange ppl in it.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1ppb036/well_thats_a_nice_surprise/nunxhgm/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-18</td>
+            <td>comment</td>
+            <td class="comment-text">I have used every windows since 3.11 for workgroups. And I’m a Mac user since 2011. So you’re right. Windows is a mess and Windows 11 is utter garbage with the single purpose to farm user data for AI. 
+But this all doesn’t excuse that MacOS was the best OS (like having the best parts of Linux but wi</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1ppgabr/macos_users_crying_about_ui_inconsistency_try/nun6d68/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-17</td>
+            <td>comment</td>
+            <td class="comment-text">How was it in the wild Wild West? A lawless place. Within cities it was dangerous but out of them you never knew. It’s the same in Arc. It’s good to not know. I don’t want to know. This would spoil everything. If someone is nice. I’m nice. If someone acts strange I shoot without hesitation.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pp2jtx/if_you_want_pve_why_are_you_playing_this_game/nujtd8a/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-17</td>
+            <td>comment</td>
+            <td class="comment-text">I play both PvE and PvP. You could say my playstyle is PvPvE. Sometimes I play more PvEvP. Sometimes not. I like it. I like the game. I play with no goal. I play because I play.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pp2jtx/if_you_want_pve_why_are_you_playing_this_game/nujpj91/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-17</td>
+            <td>comment</td>
+            <td class="comment-text">Lol</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pohh7c/ha_got_em/nujool1/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-17</td>
+            <td>comment</td>
+            <td class="comment-text">Look at his account age. Typical troll.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pocm2q/binoculars_screenshots/nuhxpsw/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/PublicFreakout</td>
+            <td>2025-12-17</td>
+            <td>comment</td>
+            <td class="comment-text">You didn’t see the videos about Mexican parliament yesterday, did you? :-)</td>
+            <td><a href="https://www.reddit.com/r/PublicFreakout/comments/1poo1do/dearborn_michigan_freakout/nuh0coy/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Some people feel entitled to get it for free because they paid 40$ for the base game…</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po6m2y/psa_the_new_skin_does_not_cost_20_its_a_2400_coin/nudd0ib/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Then please issue a refund in steam and go back playing Banana clicks or whatever. It’s ridiculous. There are so many damned copy pasta games like Call of Booty or Doom 28 or Battlefield that cost 70 bucks for the same shit in another skin. 
+40 bucks is nothing for this gem…</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po6m2y/psa_the_new_skin_does_not_cost_20_its_a_2400_coin/nud9j37/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Says the one who is complaining about the game since his first post.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po6m2y/psa_the_new_skin_does_not_cost_20_its_a_2400_coin/nud7wbh/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">You predictions are true. Go back to Helldivers.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po6m2y/psa_the_new_skin_does_not_cost_20_its_a_2400_coin/nud75m2/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">This is the whiniest sub of all time. Every time I think the entitlement of some individuals can’t be topped the next one comes around the corner whining why they don’t get everything for free besides the two awesome patches, another deck for free, and so on. It’s crazy. Finally there is a studio th</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po6m2y/psa_the_new_skin_does_not_cost_20_its_a_2400_coin/nud6fsq/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">We just got another free deck but hey people complaining about something they can also earn over time that is not mandatory for gameplay and that nobody needs. I don’t get it. Maybe I’m too old. Nobody forces you.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po4my6/deleted_by_user/nucqpao/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Oh now I understand. Thanks.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po3ziy/bugged_match_making/nucq1sf/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">What?</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po3ziy/bugged_match_making/nuccz0u/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Don’t fly fittings you can’t afford. It’s from eve but you shouldn’t drag your precious stuff into a game where you will loose it and then be angry about it. Use stuff you can afford to loose. 
+If you go into a game always have a purpose and fit accordingly. If you want to PvP fit acordingly or use </td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1po3yqd/pvp_observations_from_a_friendly/nuccq5f/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">What are you talking about? Go play Fortnite or Super Mario if a basic extraction shooter is too much for you.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pny67r/for_everyone_asking_what_was_going_to_happen_to/nuc6cwh/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Right? Paying for cheats but can’t run the game…</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pnxmhq/cheating_dumbass/nubkrfb/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Awesome gameplay dude.</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pnz0td/sometimes_its_just_about_playing_together/nubcw53/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Kettle is too strooooong /S</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pnz0td/sometimes_its_just_about_playing_together/nubbfil/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-16</td>
+            <td>comment</td>
+            <td class="comment-text">Kagi does a great job…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pnxibg/youtube_ai_summary_mac_app/nub68rt/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-13</td>
+            <td>comment</td>
+            <td class="comment-text">We have seen RAM discussions here so many times. Macs use RAM differently than Windows PCs. They use the available RAM when not used by any specific program with apps and data and use it as cache. As soon as you open an app that needs this RAM it will free it. So the ram may seem to be full all the </td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1plqz9e/lower_ram_usage_on_macos_262/ntvk2g2/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-12</td>
+            <td>comment</td>
+            <td class="comment-text">Dude trying to post a half serious meme. Everyone else super serious about it… -.-</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1pl1tfq/get_a_mac_they_said_itll_clean_up_your_setup_they/ntpqck7/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-12</td>
+            <td>comment</td>
+            <td class="comment-text">The guy who is mainly responsible for this shitshow has left Apple so there is a lot of room for hope :-)</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pkd6dp/supercharge_new_feature/ntoja9w/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/ArcRaiders</td>
+            <td>2025-12-12</td>
+            <td>comment</td>
+            <td class="comment-text">And my axe!</td>
+            <td><a href="https://www.reddit.com/r/ArcRaiders/comments/1pktz7s/cheaters_need_to_be_addressed_before_this_ends_up/ntobc4z/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-12</td>
+            <td>comment</td>
+            <td class="comment-text">You can set it up to do it automatically.
+Instead of a key trigger you set a “when app is opened” trigger.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pkvice/ive_totally_switched_over_to_bloom_but/nto9b9u/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-12</td>
+            <td>comment</td>
+            <td class="comment-text">Please stay on Sequoia. Tahoe is such a mess… maybe MacOS 27 will be better…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pkd6dp/supercharge_new_feature/nto8fh6/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-12</td>
+            <td>comment</td>
+            <td class="comment-text">The Mac windows management should save the window positions but it’s not always working as intended. I would try to reboot. 
+I had one app that wouldn’t keep the position no matter what I did. I made an automatic macro with keyboard maestro for it.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pkvice/ive_totally_switched_over_to_bloom_but/nto7g5b/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/casio</td>
+            <td>2025-12-12</td>
+            <td>comment</td>
+            <td class="comment-text">Hey European here… it was very strange for me but I got used to it.</td>
+            <td><a href="https://www.reddit.com/r/casio/comments/1pksvwc/need_help_with_calendar_on_abl100we/ntnj69c/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/EuropeGuns</td>
+            <td>2025-12-11</td>
+            <td>comment</td>
+            <td class="comment-text">I don’t know but isn’t it EU regulated that you are not allowed to have more than 10 except you are a sports shooter or hunter? I thought this was a EU wide rule?</td>
+            <td><a href="https://www.reddit.com/r/EuropeGuns/comments/1pjwq8f/rifle_magazines_slovenia/ntgnste/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-06</td>
+            <td>comment</td>
+            <td class="comment-text">Yes, exactly. I want to listen to my own audio files offline...
+Aren&#x27;t VLC and IINAA videoplayers?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pfv4fy/what_is_the_best_mac_audio_player_not_streaming/nsmq328/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-06</td>
+            <td>comment</td>
+            <td class="comment-text">+1 for Bloom</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pfbymm/looking_for_finder_alternative/nskelxh/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-06</td>
+            <td>post</td>
+            <td class="comment-text">I want to ditch Deezer after I canceled Spotify 2 months ago. Deezer is not that bad and way better than Spotify but I’m not listening to new music that often anymore so I thought about just going oldschool and buying music again. 
+There are whole FLAC albums on sale for 6€. On the other hand every </td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pfv4fy/what_is_the_best_mac_audio_player_not_streaming/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-05</td>
+            <td>comment</td>
+            <td class="comment-text">The most important is Wezterm. 
+With Wezterm I use some nice terminal tools:
+
+* Yazi
+* fzf
+* Zoxide
+* fd
+* bat
+* tree
+
+Besides terminal tools I also use self hosted FOSS apps:
+
+* linkding
+* Paperless
+* Stirling PDF
+
+&quot;Normal&quot; FOSS Apps I use are
+
+* Firefox
+* CotEditor
+* Xournal++
+* IINA Media Player</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pezep0/share_your_foss_apps_that_you_usehave_until_now/nsgntkd/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-05</td>
+            <td>comment</td>
+            <td class="comment-text">I&#x27;m not sure... I thought about getting it but I don&#x27;t know if I need all the functions...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pf1ry1/last_day_to_get_emclient_at_50_off/nsglqob/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/LittleSnitch</td>
+            <td>2025-12-05</td>
+            <td>comment</td>
+            <td class="comment-text">I’m not sure if I understand your problem but as much as I know you can’t use Office 365 stuff without being online from time to time. It logs you out. 
+I’m in a similar situation I have to use MS Mail for work. I use it in Thunderbird, I save the important stuff and delete the rest. 
+But little sni</td>
+            <td><a href="https://www.reddit.com/r/LittleSnitch/comments/1pf0psx/ms_office/nsgjyd4/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-05</td>
+            <td>comment</td>
+            <td class="comment-text">Tahoe is a mess.</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1pencu2/is_that_normal_for_apple_with_30_thousand_of/nsds7n3/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/degoogle</td>
+            <td>2025-12-05</td>
+            <td>comment</td>
+            <td class="comment-text">In 10 years you will spend 1700$ and own nothing. You can buy a lot of physical music and hardware for that money.</td>
+            <td><a href="https://www.reddit.com/r/degoogle/comments/1peebhs/which_streaming_services_could_be_most_ethical/nsdfl8k/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-04</td>
+            <td>comment</td>
+            <td class="comment-text">There are almost no good electron apps that are worth it besides Obsidian. And Obsidian is crazily optimized. 
+But apps like Diskord, WhatsApp, Slack are resource hogs. If you are running a MacBook it will melt your battery like ice in summer.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pe6f57/whatsapp_from_app_store_or_download_from_website/nsab6zu/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-04</td>
+            <td>comment</td>
+            <td class="comment-text">Be aware that they are electron apps. They are literally chrome windows without browser buttons. The apps will use more resources than just running WhatsApp in your main browser. So there is no benefit of running the apps instead of running WhatsApp web. Except the looks.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pe6f57/whatsapp_from_app_store_or_download_from_website/nsa6y72/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-04</td>
+            <td>comment</td>
+            <td class="comment-text">Yes. Let Apples liquid ass team work on something like this. They can make everything uglier…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pd6cbz/desktop_toys_let_your_mac_book_feel_a_little_more/ns8xrgg/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-04</td>
+            <td>comment</td>
+            <td class="comment-text">As long as it isn’t a Microsoft account because that is f’ed up beyond repair. But it’s not apples fault it is Microsoft not being able to keep mail standards…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pdc91j/kiwi_legacy_plans_going_awayalternatives_stick/ns8xi2l/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/degoogle</td>
+            <td>2025-12-04</td>
+            <td>comment</td>
+            <td class="comment-text">I left Spotify some weeks ago when they started putting AI songs in my lists…
+I’m using Deezer for now and I’m pretty happy.</td>
+            <td><a href="https://www.reddit.com/r/degoogle/comments/1pdia08/spotify_alternatives/ns8ntfe/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-12-03</td>
+            <td>comment</td>
+            <td class="comment-text">Oh don’t open the contacts app. You will be greeted by a plethora of round stuff and even in full screen you will have to scroll down to see all the info of one contact.</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1pdfpna/deleted_by_user/ns4pcso/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-03</td>
+            <td>comment</td>
+            <td class="comment-text">Why did you ditch cleanshot x for Shottr?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pc8bsm/default_apps_for_the_year_ahead/ns3mirt/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-03</td>
+            <td>comment</td>
+            <td class="comment-text">So you think it is a good design choice that around 20% of the entire UI is essentially empty in an app like Contacts whose main purpose is to display as much contact information as clearly as possible? And I have to scroll down to see all the information although most of the upper part is wasted by</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pd3z8h/has_the_bloom_design_been_updated_for_macos_tahoe/ns31wlg/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-03</td>
+            <td>comment</td>
+            <td class="comment-text">I hope it won’t get Updated to this design mess. Safari looks like shit and Contacts needs more than a 14” screen to show one contact’s full information and most of the screen is empty. 
+Bloom looks great as it is…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pd3z8h/has_the_bloom_design_been_updated_for_macos_tahoe/ns2l3mc/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/fountainpens</td>
+            <td>2025-12-03</td>
+            <td>comment</td>
+            <td class="comment-text">This. Got it recommended in this sub. I love it. I adore it…</td>
+            <td><a href="https://www.reddit.com/r/fountainpens/comments/1pct24e/what_is_the_cheapest_fountain_pen_in_your/ns0vt88/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-02</td>
+            <td>comment</td>
+            <td class="comment-text">I tried both and I didn&#x27;t like the mouse shake thing. I like Yoinks simplicity. It just works and sits there.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pc8hsu/yoink_vs_dropover_which_is_best/nrxh6lp/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/BuyItForLife</td>
+            <td>2025-12-02</td>
+            <td>comment</td>
+            <td class="comment-text">I don’t know the brand but I’m from Austria and jackets like that are very very common here. It’s felt so it will keep you warm even when wet and will keep water away for some time.</td>
+            <td><a href="https://www.reddit.com/r/BuyItForLife/comments/1pbr9k1/wool_winter_jackets_what_are_the_thoughts/nrwd2pd/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/casio</td>
+            <td>2025-12-02</td>
+            <td>comment</td>
+            <td class="comment-text">But isn’t this the best watch after the f91w? Why would they discontinue?</td>
+            <td><a href="https://www.reddit.com/r/casio/comments/1pc21yo/finally_bought_one_while_i_still_can/nrv2o97/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-02</td>
+            <td>comment</td>
+            <td class="comment-text">ok this seems to work if I make 2 screenshots. but not if I make 1 screenshot the normal way and if I add the second with Command+A. 
+Thank you for your reply!</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pbpf3q/cleanshot_x_adding_additional_screenshot_at_the/nruichi/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-01</td>
+            <td>comment</td>
+            <td class="comment-text">I think I saw it somewhere in the settings, yes.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pbkxhc/it_turns_out_that_the_app_version_number_is/nrs3wxi/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-01</td>
+            <td>comment</td>
+            <td class="comment-text">I don&#x27;t see it as a switch. It is just a second finder app for the hard work. If I have to open a folder I still use Finder. For anything else I use Bloom.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pbkxhc/it_turns_out_that_the_app_version_number_is/nrrx7d3/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-01</td>
+            <td>comment</td>
+            <td class="comment-text">There is a check in the settings that says remember the layout or something...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pbkxhc/it_turns_out_that_the_app_version_number_is/nrrwxmc/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-01</td>
+            <td>comment</td>
+            <td class="comment-text">I was very skeptical about Bloom. I’m a longtime finder user. I tried Forklift from time to time but never got used to it. 
+I tried Bloom for 10 minutes and was so baffled by its speed and slickness, bought it instantly.
+
+The best thing is I can change the font to Code New Roman Nerdfont... It looks</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pbkxhc/it_turns_out_that_the_app_version_number_is/nrr9wpz/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/MacOS</td>
+            <td>2025-12-01</td>
+            <td>comment</td>
+            <td class="comment-text">Thank you so much for your detailed answer. It definitively got better with this fix. You have a nice piece of software... I like it so far. Keep on the good work!</td>
+            <td><a href="https://www.reddit.com/r/MacOS/comments/1p3933d/default_folder_the_best_utility_i_own_or_ever_have/nrpyg85/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-01</td>
+            <td>comment</td>
+            <td class="comment-text">Oh none. I was just curious. I’m avoiding apps that are resource intense beyond their function. Like electron apps.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1o6hufc/bloom_has_replaced_a_bunch_of_other_software_for/nrpe75y/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-01</td>
+            <td>comment</td>
+            <td class="comment-text">How is it using system resources? Does it use a lot of RAM or battery?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1o6hufc/bloom_has_replaced_a_bunch_of_other_software_for/nrolfl0/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-12-01</td>
+            <td>post</td>
+            <td class="comment-text">Hello...
+Long time Shottr user, I wanted to give Cleanshot X a try and so far so good but I&#x27;m missing a Shottr feature... In both apps it is possible to make a screenshot and then add another capture. Shottr lets you drag around the new capture to each side of the screenshot but I cannot find this o</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pbpf3q/cleanshot_x_adding_additional_screenshot_at_the/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-30</td>
+            <td>comment</td>
+            <td class="comment-text">How does it compare to forklift?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pas5i5/it_was_a_productive_black_friday_share_your_mac/nrlzk20/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-30</td>
+            <td>comment</td>
+            <td class="comment-text">Nice Collection. Kagi is my only sub. I love it and I can’t go back to anything else…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pasr2s/what_i_am_using_2025/nrly2ks/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/MacOS</td>
+            <td>2025-11-30</td>
+            <td>comment</td>
+            <td class="comment-text">Hello. I also have the problem that the overlay in save or open windows lags and appears a second later. I have a Macbook Air M1 with Tahoe... 
+I&#x27;m wondering if this is some Tahoe issue...</td>
+            <td><a href="https://www.reddit.com/r/MacOS/comments/1p3933d/default_folder_the_best_utility_i_own_or_ever_have/nrlifws/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-30</td>
+            <td>comment</td>
+            <td class="comment-text">Awesome. I would love to try it!</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1pap0ok/focusmo_adhd_productivity_day_planning_in_menubar/nrku3en/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-30</td>
+            <td>comment</td>
+            <td class="comment-text">Some very good recommendations, but you really don&#x27;t need Amphetamine. Just type &quot;caffeinate -d&quot; in your terminal. Done. Sometimes the simple things are the best.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1panpod/simplicity_essentials/nrktof1/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-30</td>
+            <td>comment</td>
+            <td class="comment-text">Oh that’s a bummer. I hate Electron.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p9k9jr/eaglecool_30_bf_offer/nri4oo2/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-28</td>
+            <td>comment</td>
+            <td class="comment-text">There is. Stirling PDF. It is open source. And you host it yourself. Your space. Your data.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p8vll6/wtf_is_up_with_pdf_experts_black_friday_deal/nrapm2b/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-28</td>
+            <td>comment</td>
+            <td class="comment-text">Red flag. Don’t support them. This is a very bad practice…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p8vll6/wtf_is_up_with_pdf_experts_black_friday_deal/nr98koe/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-28</td>
+            <td>comment</td>
+            <td class="comment-text">me too. It is a little bit too much for a firewall. I mean, it looks great but it&#x27;s a tool. And it is said to use a lot of RAM.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p8o9gj/little_snitch_30_off/nr8im8m/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-28</td>
+            <td>comment</td>
+            <td class="comment-text">Also was hoping for a Clop discount but then... it is just 13 €, so... that&#x27;s not that much...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p8pgfn/no_clop_alcove_black_friday_deals/nr81aii/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-28</td>
+            <td>comment</td>
+            <td class="comment-text">How is it on the system resources? Does it use a lot? Does it cause lag or anything?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p8o9gj/little_snitch_30_off/nr79emz/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-28</td>
+            <td>comment</td>
+            <td class="comment-text">Hazel always. The dev is updating and bugfixing since I don&#x27;t know when and it just works. It is the first app I install on a new Mac.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p8697x/hazel_vs_sortio/nr66djb/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-11-27</td>
+            <td>comment</td>
+            <td class="comment-text">Just enjoy all those little and great oh- so easy - feelings</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1p7fddz/first_things_to_do_from_windows_to_mac_air_m4/nr3w9et/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-27</td>
+            <td>comment</td>
+            <td class="comment-text">This is the first list that is not full of AI apps. Thanks, upvote</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p8bij1/quality_black_friday_2025_macos_apps/nr3w1tu/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-27</td>
+            <td>comment</td>
+            <td class="comment-text">oh that&#x27;s great. Thank you... I&#x27;m building the Johnny decimal system, would be a great help for that</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p87epc/what_exactly_does_default_folder_x_do/nr3kfrl/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-27</td>
+            <td>comment</td>
+            <td class="comment-text">oh that&#x27;s great. Thank you... I&#x27;m building the Johnny decimal system, would be a great help for that</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p87epc/what_exactly_does_default_folder_x_do/nr3kdv6/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-27</td>
+            <td>comment</td>
+            <td class="comment-text">Is it using a lot of ram and resources?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p87epc/what_exactly_does_default_folder_x_do/nr348rh/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-27</td>
+            <td>comment</td>
+            <td class="comment-text">I’m not sure if they are real alternatives… I mean yoink is awesome but it’s definitively not made for hard folder work…</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p87epc/what_exactly_does_default_folder_x_do/nr3448z/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Affinity</td>
+            <td>2025-11-27</td>
+            <td>comment</td>
+            <td class="comment-text">V2 also had massive problems at release. But it got better over time. I see many publisher bugs that are still in v2 gone now. But overall I still prefer publisher 2</td>
+            <td><a href="https://www.reddit.com/r/Affinity/comments/1p83t95/this_is_what_disappoints_me_in_the_new_version/nr2nryw/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-27</td>
+            <td>post</td>
+            <td class="comment-text">I looked at the homepage and saw the screenshots but… are those just Favorites at the side of finder and a drag and drop area?
+I already use Yoink. Can they can they complement each other?
+Is it worth the price or can I do all of it with hazel and keyboard maestro anyways? 
+I’m curious to buy defaul</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p87epc/what_exactly_does_default_folder_x_do/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-26</td>
+            <td>comment</td>
+            <td class="comment-text">Thank you. I would be very curious what you would make out of it if you decided to revive it. :) 
+And regarding Popclip: Great, thanks, it is already a very good price for an amazing app. keep up your good work.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p5hfpe/yoink_vs_dropzone_vs_unclutter_vs_dockside/nqwflg0/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-25</td>
+            <td>comment</td>
+            <td class="comment-text">This is awesome... They are even cheaper in this bundle than on their own websites... 
+Thanks for sharing the info!</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p6pfju/black_friday_discount_for_12_apps/nqs22jl/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/Opinel</td>
+            <td>2025-11-25</td>
+            <td>comment</td>
+            <td class="comment-text">It depends on where you live</td>
+            <td><a href="https://www.reddit.com/r/Opinel/comments/1p6hcaw/this_one_goes_into_my_lederhosen/nqqw3sb/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-25</td>
+            <td>comment</td>
+            <td class="comment-text">Hey! You&#x27;re the Popclip dev, right? 
+Dropshelf looks nice but is the last beta really from 2021? 
+By the way, do you plan to do a Black Friday sale on Popclip? :)
+I want to gift some colleages and friends with your awesome app.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p5hfpe/yoink_vs_dropzone_vs_unclutter_vs_dockside/nqpwt8i/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/BuyItForLife</td>
+            <td>2025-11-25</td>
+            <td>comment</td>
+            <td class="comment-text">Patagonia</td>
+            <td><a href="https://www.reddit.com/r/BuyItForLife/comments/1p6ck8a/patagonia_for_250_vs_arcteryx_320/nqpixxl/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-24</td>
+            <td>comment</td>
+            <td class="comment-text">You can just drag and drop anything. Links, files, emails, everything that can be dragged and dropped. Even text. You can send stuff with Popclip to it.
+It is much more convenient than 2 finder windows.</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p5hfpe/yoink_vs_dropzone_vs_unclutter_vs_dockside/nqla43g/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-24</td>
+            <td>comment</td>
+            <td class="comment-text">Hazel and Keyboard Maestro</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p52ti0/searching_for_productivity_and_essential_mac_apps/nqha4ou/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-24</td>
+            <td>post</td>
+            <td class="comment-text">I want a drop tool but I can&#x27;t figure out which one to get? What do you think? Aren&#x27;t they all the same? I&#x27;m not sure where the main differences are. I mean, Dropzone has more functions.., I guess? Dockside is very simple?</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p5hfpe/yoink_vs_dropzone_vs_unclutter_vs_dockside/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-23</td>
+            <td>comment</td>
+            <td class="comment-text">Hazel</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p4u4wv/sparkle_vs_hazel_ai_organizer/nqf9rvd/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-23</td>
+            <td>comment</td>
+            <td class="comment-text">All three have their pros and cons. I would rank Safari last although it was my main browser since 2011. But recently I switched to Firefox because I despise the new design and lack of features like adblocking or sidebar tabs. 
+Safari is wasting the most space. 
+Orion may not be as advanced as Zen b</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p4hf3b/safari_vs_zen_vs_orion_for_mac/nqbutja/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/mac</td>
+            <td>2025-11-22</td>
+            <td>comment</td>
+            <td class="comment-text">Listen to the song the ace of spades. But imagine he would sing: a waste of space</td>
+            <td><a href="https://www.reddit.com/r/mac/comments/1p2wfaq/macos_262_tahoe_adds_three_new_mac_features_heres/nq5gpnh/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-21</td>
+            <td>comment</td>
+            <td class="comment-text">Great, I was looking exactly for something like this...</td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p2zjx2/giveaway_barmarks_v2_minimalist_bookmark_manager/nq35mxa/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/pcmasterrace</td>
+            <td>2025-11-21</td>
+            <td>comment</td>
+            <td class="comment-text">best reply ever</td>
+            <td><a href="https://www.reddit.com/r/pcmasterrace/comments/1mtusrf/what_are_your_musthave_windows_apps_in_2025/nq2xurr/" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>r/macapps</td>
+            <td>2025-11-21</td>
+            <td>comment</td>
+            <td class="comment-text">The sticky notes are great, but... this week we are learning the topic “School vocabulary.”
+So I write 15–20 words into a text file. I then use this text file with several Python scripts and apps. First, for creating a word search.
+The next day, I use it to generate a crossword puzzle.
+On the third </td>
+            <td><a href="https://www.reddit.com/r/macapps/comments/1p0x889/i_built_a_small_macos_app_for_quick_swiftpython/nq22gne/" target="_blank">Link</a></td>
+        </tr></tbody>
+    </table>
+    </div>
+</section>
+
+<div class="footer">
+    <p>Generated by macapps-audit · Requests: 15 | Errors: 0</p>
+    <p>Automated assessment only. Always verify evidence before taking moderator action.</p>
+</div>
+
+</body>
+</html>
